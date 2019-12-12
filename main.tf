@@ -1,11 +1,10 @@
 module "s3_bucket" {
-  source              = "https://github.com/clouddrove/terraform-aws-s3/tree/master/_example/default-s3"
-  name                = "sandbox-terraform-bucket1"
-  region              = "eu-central-1"
-  application         = "sandbox"
-  environment         = "test"
-  label_order         = ["environment", "name", "application"]
-  versioning          = true
-  acl                 = "private"
-  bucket_enabled      = true
+  source                   = "git::https://github.com/cloudposse/terraform-aws-s3-bucket.git?ref=master"
+  enabled                  = true
+  user_enabled             = true
+  versioning_enabled       = false
+  allowed_bucket_actions   = ["s3:GetObject", "s3:ListBucket", "s3:GetBucketLocation"]
+  name                     = "terraform-module-sbox-bucket1"
+  stage                    = "test"
+  namespace                = "eg"
 }
