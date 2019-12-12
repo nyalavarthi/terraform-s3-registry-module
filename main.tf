@@ -1,5 +1,5 @@
 module "s3_bucket" {
-  source              = "https://github.com/clouddrove/terraform-aws-s3?ref=tags/0.12.2"
+  source              = "https://github.com/clouddrove/terraform-aws-s3/tree/master/_example/default-s3"
   name                = "sandbox-terraform-bucket1"
   region              = "eu-central-1"
   application         = "sandbox"
