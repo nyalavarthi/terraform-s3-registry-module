@@ -7,4 +7,10 @@ module "s3_bucket" {
   name                     = "terraform-module-sbox-bucket1"
   stage                    = "test"
   namespace                = "eg"
+  tags = {
+    Name        = "My S3 test bucket"
+    Environment = "Sandbox"
+    Owner       = "Narendra Yala",
+    DataType    = "Test files"  
+  }
 }
